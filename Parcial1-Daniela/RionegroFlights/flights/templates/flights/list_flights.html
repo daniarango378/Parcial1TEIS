@@ -1,0 +1,29 @@
+{% extends 'flights/base.html' %}
+
+{% block title %}Lista de Vuelos{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Lista de Vuelos</h1>
+<table class="table table-striped my-4">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for flight in flights %}
+    <tr>
+      <td>{{ flight.id }}</td>
+      <td style="font-weight: {% if flight.type == 'Internacional' %}bold{% endif %}">{{ flight.name }}</td>
+      <td>{{ flight.type }}</td>
+      <td style="color: {% if flight.type == 'Nacional' %}blue{% endif %}">{{ flight.price }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{% url 'index' %}" class="btn btn-secondary">Volver al inicio</a>
+{% endblock %}
+

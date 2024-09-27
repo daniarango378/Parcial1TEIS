@@ -1,0 +1,13 @@
+{% extends 'flights/base.html' %}
+
+{% block title %}Estadísticas de Vuelos{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Estadísticas de Vuelos</h1>
+<div class="my-4">
+  <p><strong>Total de vuelos nacionales:</strong> {{ total_national }}</p>
+  <p><strong>Total de vuelos internacionales:</strong> {{ total_international }}</p>
+  <p><strong>Precio promedio de vuelos nacionales:</strong> {{ avg_national_price }}</p>
+</div>
+<a href="{% url 'index' %}" class="btn btn-secondary">Volver al inicio</a>
+{% endblock %}

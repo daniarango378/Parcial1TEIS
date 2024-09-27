@@ -1,0 +1,17 @@
+{% extends 'flights/base.html' %}
+
+{% block title %}Registrar Vuelos{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Registrar Vuelo</h1>
+<div class="card mx-auto my-4" style="max-width: 600px;">
+  <div class="card-body">
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Registrar Vuelo</button>
+    </form>
+  </div>
+</div>
+<a href="{% url 'index' %}" class="btn btn-secondary">Volver al inicio</a>
+{% endblock %}

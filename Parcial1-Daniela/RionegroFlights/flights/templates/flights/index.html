@@ -1,0 +1,12 @@
+{% extends 'flights/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Bienvenido a la gestión de vuelos de Rionegro</h1>
+<ul class="list-group my-4">
+  <li class="list-group-item"><a href="{% url 'register_flight' %}">Registrar vuelos</a></li>
+  <li class="list-group-item"><a href="{% url 'list_flights' %}">Listar vuelos</a></li>
+  <li class="list-group-item"><a href="{% url 'flight_statistics' %}">Estadísticas de vuelos</a></li>
+</ul>
+{% endblock %}
